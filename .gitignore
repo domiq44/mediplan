@@ -1,0 +1,69 @@
+# ----------------------------------------------------
+# Mediplan - .gitignore
+# Application web locale (HTML/CSS/JS)
+# ----------------------------------------------------
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# PID du serveur local
+.server_pid
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache navigateur / outils
+.cache/
+.vscode/
+.idea/
+
+# Node (si un jour tu ajoutes un serveur local)
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Build / dist (si tu ajoutes un bundler plus tard)
+dist/
+build/
+out/
+
+# Temp files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Sauvegardes éditeur
+*~
+*.bak
+*.orig
+
+# Environnements (si tu ajoutes un backend plus tard)
+.env
+.env.local
+.env.*.local
+
+# ----------------------------------------------------
+# Fichiers générés automatiquement par Mediplan
+# ----------------------------------------------------
+
+# Sauvegarde locale du navigateur (juste pour rappel)
+# (localStorage n’est pas un fichier, donc rien à ignorer ici)
+
+# ----------------------------------------------------
+# Fichiers que tu pourrais ajouter plus tard
+# ----------------------------------------------------
+
+# Exports éventuels
+*.pdf
+*.csv
+*.xlsx
+
+# Images temporaires
+tmp_images/
+generated/

@@ -1,0 +1,62 @@
+{
+  "specialistes": [
+    {
+      "id": "8f3c1c3c-4c1d-4b7a-9a1e-2c6c1f7b9d11",
+      "specialite": "Dentiste",
+      "prenom": "Jean",
+      "nom": "Dupont",
+      "frequence_mois": 6,
+      "telephone": "06 12 34 56 78",
+      "adresse": "12 rue des Lilas, 44000 Nantes",
+      "rdv": [
+        "2026-07-10T09:30",
+        "2026-12-10T10:00"
+      ],
+      "rdv_dependances": [
+        {
+          "type": "Radio panoramique",
+          "delai_jours": 10,
+          "rdv_date": "2026-07-10T09:30"
+        }
+      ]
+    },
+    {
+      "id": "c1b2a3d4-e5f6-47a8-9b0c-123456789abc",
+      "specialite": "Cardiologue",
+      "prenom": "Sophie",
+      "nom": "Martin",
+      "frequence_mois": 12,
+      "telephone": "06 98 76 54 32",
+      "adresse": "5 avenue du Cœur, 44300 Nantes",
+      "rdv": [
+        "2025-03-15T14:00",
+        "2026-03-15T10:30"
+      ],
+      "rdv_dependances": [
+        {
+          "type": "Prise de sang",
+          "delai_jours": 7,
+          "rdv_date": "2026-03-15T10:30"
+        },
+        {
+          "type": "ECG",
+          "delai_jours": 2,
+          "rdv_date": "2026-03-15T10:30"
+        }
+      ]
+    },
+    {
+      "id": "f7e6d5c4-b3a2-41f0-8c9d-abcdef123456",
+      "specialite": "Ophtalmologue",
+      "prenom": "Claire",
+      "nom": "Leroy",
+      "frequence_mois": 24,
+      "telephone": "07 22 33 44 55",
+      "adresse": "18 rue de la Vision, 44200 Nantes",
+      "rdv": [
+        "2026-09-01T11:15"
+      ],
+      "rdv_dependances": []
+    }
+  ]
+}

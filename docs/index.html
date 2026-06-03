@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mediplan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Mediplan</h1>
+    <p>Suivi de vos rendez-vous médicaux</p>
+
+    <div class="header-controls">
+      <!-- Sélecteur de thème -->
+      <div class="theme-switcher" role="group" aria-label="Sélecteur de thème">
+        <button type="button" class="theme-option" data-theme="system">Système</button>
+        <button type="button" class="theme-option" data-theme="light">Clair</button>
+        <button type="button" class="theme-option" data-theme="dark">Sombre</button>
+      </div>
+
+      <div class="header-actions">
+        <div>
+          <button onclick="exporterDonnees()">📤 Exporter les données</button>
+
+          <label style="cursor:pointer; display:inline-flex; gap:6px; align-items:center;">
+            📥 Importer des données
+            <input type="file" id="importFile" accept="application/json"
+                   onchange="importerDonnees(event)" style="display:none;">
+          </label>
+        </div>
+
+        <button onclick="resetDonnees()" class="danger">
+          🔄 Réinitialiser les données
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="storageInfo" class="storage-note">Chargement de l’état de stockage local...</div>
+  <div id="appMessage" class="app-message" style="display:none"></div>
+
+  <div id="confirmationDialog" class="dialog-overlay" aria-hidden="true">
+    <div class="dialog-card" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">
+      <h2 id="dialogTitle" class="dialog-title">Confirmation</h2>
+      <p id="dialogMessage" class="dialog-message">Message</p>
+      <div class="dialog-actions">
+        <button id="dialogCancel" type="button" class="secondary">Annuler</button>
+        <button id="dialogConfirm" type="button">Confirmer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mise en page en deux colonnes -->
+  <main class="layout">
+
+    <!-- Colonne gauche : liste des spécialistes -->
+    <section id="specialistes" class="col-left"></section>
+
+    <!-- Colonne droite : onglets + dashboard + RDV -->
+    <section class="col-right">
+
+      <div id="rightTabs">
+        <button onclick="showDashboard()" class="active">Dashboard</button>
+        <button onclick="showRdv()">Détails / Saisie</button>
+      </div>
+
+      <section id="dashboard"></section>
+      <section id="rdv"></section>
+
+    </section>
+
+  </main>
+
+  <div id="server-status"
+    style="display:none; background:#ffdddd; padding:10px; margin:10px; border:1px solid #ff8888;">
+    ⚠️ Le serveur Mediplan est arrêté.
+  </div>
+
+  <!-- Scripts (ordre important !) -->
+  <script type="module" src="dates.js"></script>
+  <script type="module" src="rdv.js"></script>
+  <script type="module" src="dashboard.js"></script>
+  <script type="module" src="specialistes.js"></script>
+  <script type="module" src="app.js"></script>
+
+  <script>
+    // Empêche Firefox/Chrome de mettre l’onglet en veille
+    let keepAlive = setInterval(() => {}, 1000);
+  </script>
+</body>
+
+</html>
